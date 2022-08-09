@@ -3,5 +3,5 @@ from blogapp import views
 
 urlpatterns = [
     path("",views.index,name="index"),
-    path("single/",views.single,name="single"),
+    path("post/<int:pk>",views.PostDetailViews.as_view(),name="post"),
 ]

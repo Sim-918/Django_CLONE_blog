@@ -19,6 +19,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    #1번글의 경우->single/1
+    #1번글의 경우->post/1
     def get_absolute_url(self):
-        return reverse("single",args=[str(self,id)])
+        return reverse("post",args=[str(self.id)])
+    #내용이 40자가 넘으면
+    def is_content_more40(self):
+        return len(self.content) > 40
+    #내용을 40자로 자른다
+    def get_content_under40(self):
+        return self.content[:40]
