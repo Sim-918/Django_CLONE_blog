@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from blogapp.models import Category,Post
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin       
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 def index(request):
@@ -12,3 +14,8 @@ def index(request):
 
 class PostDetailViews(generic.DetailView):
     model=Post
+
+class PostCreate(LoginRequiredMixin,CreateView):
+    model=Post
+    fields=["title","title_image","content","category"]
+    
