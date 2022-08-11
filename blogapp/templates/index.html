@@ -36,7 +36,7 @@
                         {% if user.is_authenticated %} <!--사용자가 로그인이 되있으면-->
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'post_create' %}">Posting</a></li>
                         {% else %} <!--아니면-->
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/admin">Login</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/admin">Sign in</a></li>
                         {% endif %}
                         
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'index' %}">준비중..</a></li>
@@ -92,7 +92,7 @@
                     {% endfor %}
                     
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">더보기 →</a></div>
-                </div>
+                    </div>
             </div>
         </div>
         <!-- Footer-->
